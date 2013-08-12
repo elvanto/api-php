@@ -5,6 +5,11 @@ This library is all set to go with version 1 of our API. Just create the object 
 
     $elvanto = new elvantoAPI('your api key');
     $people = $elvanto->call('people.getAll', array('archived' => 'no'));
+    
+Documentation
+=======
+
+Documentation to the elvanto API can be found on the <a href="http://elvanto.com/api/" target="_blank">developer website</a>.
 
 Updates
 =======
