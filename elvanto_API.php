@@ -24,28 +24,25 @@ class elvanto_API {
 	* Call an API method. Every request needs the API key, so that is added automatically.
 	* @param string $method The API method to call.
 	* @param array $args An array of parameters to pass to the method.
-	* @return array Associative array of unserialized API response.
+	* @return array Associative array of json decoded API response.
 	*/
 	public function call($method, $args = array()) {
 
 		$args['apikey'] = $this->api_key;
 
-		$url = $this->api_endpoint . '?output=php&method=' . $method;
+		$url = $this->api_endpoint . $method . '.json';
 
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, $url);
-		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/x-www-form-urlencoded'));
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($ch, CURLOPT_TIMEOUT, 10);
-		curl_setopt($ch, CURLOPT_POST, count($args));
-		curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($args));
+		curl_setopt($ch, CURLOPT_POST, true);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($args));
 		$result = curl_exec($ch);
 		curl_close($ch);
 
-		if (ini_get('magic_quotes_runtime'))
-			$result = stripslashes($result);
-
-		return $result ? unserialize($result) : false;
+		return $result ? json_decode($result, true) : false;
 
 	}
 
