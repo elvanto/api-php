@@ -92,7 +92,7 @@ class elvanto_API {
 			'redirect_uri' => $redirect_uri,
 			'code' => $code
 		);
-		return $this->_request('oauth_exchange_token', $params, self::OAUTH_TOKEN_URL);
+		return $this->_request('oauth', $params, self::OAUTH_TOKEN_URL);
 	}
 
 	/**
@@ -107,7 +107,7 @@ class elvanto_API {
 			'grant_type' => 'refresh_token',
 			'refresh_token' => $this->auth_details['refresh_token']
 		);
-		return $this->_request('oauth_exchange_token', $params, self::OAUTH_TOKEN_URL);
+		return $this->_request('oauth', $params, self::OAUTH_TOKEN_URL);
 	}
 
 	/**
@@ -130,7 +130,7 @@ class elvanto_API {
 		curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
 		curl_setopt($ch, CURLOPT_TIMEOUT, 10);
 		// Exchange or refresh a token
-		if ($method === 'oauth_exchange_token' || $method === 'oauth_refresh_token') {
+		if ($method === 'oauth') {
 			$headers = array('Content-Type: application/x-www-form-urlencoded');
 			curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($params));
 		// Call an API method
