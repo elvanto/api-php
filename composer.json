@@ -17,7 +17,7 @@
     },
     "autoload": {
         "classmap": [
-        	"elvanto_API.php"
+        	"."
         ]
     }
 }
