@@ -137,7 +137,7 @@ class elvanto_API {
 		} else {
 			$url = self::API_ENDPOINT . '/' . $method . '.json';
 			$params['grant_type'] = 'client_credentials';
-			$headers = array('Content-Type: application/json');
+			$headers = array('Content-Type: application/json; charset=utf-8');
 			if (isset($this->auth_details['access_token'])) { // Authenticating using OAuth
 				$headers[] = 'Authorization: Bearer ' . $this->auth_details['access_token'];
 			} else if (isset($this->auth_details['api_key'])) { // Authenticating using an API key
