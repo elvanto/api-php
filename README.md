@@ -1,14 +1,14 @@
-# elvanto API PHP Library
+# Elvanto API PHP Library
 
-This library is all set to go with version 1 of the <a href="http://elvanto.com/api/" target="_blank">elvanto API</a>.
+This library is all set to go with version 1 of the <a href="https://www.elvanto.com/api/" target="_blank">Elvanto API</a>.
 
 ## Authenticating
 
-The elvanto API supports authentication using either <a href="http://elvanto.com/api/getting-started/#oauth" target="_blank">OAuth 2</a> or an <a href="http://elvanto.com/api/getting-started/#api_key" target="_blank">API key</a>.
+The Elvanto API supports authentication using either <a href="https://www.elvanto.com/api/getting-started/#oauth" target="_blank">OAuth 2</a> or an <a href="https://www.elvanto.com/api/getting-started/#api_key" target="_blank">API key</a>.
 
 ### Using OAuth 2
 
-This library provides functionality to help you obtain an Access Token and Refresh token. The first thing your application should do is redirect your user to the elvanto authorization URL where they will have the opportunity to approve your application to access their elvanto account. You can get this authorization URL by using the `authorize_url()` method, like so:
+This library provides functionality to help you obtain an Access Token and Refresh token. The first thing your application should do is redirect your user to the Elvanto authorization URL where they will have the opportunity to approve your application to access their Elvanto account. You can get this authorization URL by using the `authorize_url()` method, like so:
 
 ```php
 require_once('elvanto_API.php');
@@ -44,7 +44,7 @@ $refresh_token = $result->refresh_token;
 // Save $access_token, $expires_in and $refresh_token.
 ```
 
-At this point you have an access token and refresh token for your user which you should store somewhere convenient so that your application can look up these values when your user wants to make future elvanto API calls.
+At this point you have an access token and refresh token for your user which you should store somewhere convenient so that your application can look up these values when your user wants to make future Elvanto API calls.
 
 Once you have an access token and refresh token for your user, you can authenticate and make further API calls like so:
 
@@ -100,7 +100,7 @@ var_dump($results);
 
 ## Documentation
 
-Documentation can be found on the <a href="http://elvanto.com/api/" target="_blank">elvanto API website</a>.
+Documentation can be found on the <a href="https://www.elvanto.com/api/" target="_blank">Elvanto API website</a>.
 
 ## Updates
 
@@ -108,4 +108,4 @@ Follow our <a href="http://twitter.com/elvantoAPI" target="_blank">Twitter</a> t
 
 ## Support
 
-If you come across any bugs, or have any suggestions, please <a href="https://elvanto.com/forums/forum/3/api-developers/" target="_blank">post in the forum</a> or contact us <a href="http://elvanto.com/contact/" target="_blank">via our website</a>.
+If you come across any bugs, or have any suggestions, please <a href="http://support.elvanto.com/support/discussions/forums/1000123316" target="_blank">post in the forum</a> or contact us <a href="http://support.elvanto.com/support/tickets/new/" target="_blank">via our website</a>.

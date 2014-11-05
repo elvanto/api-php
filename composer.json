@@ -1,14 +1,14 @@
 {
     "name": "elvanto/api-php",
     "type": "library",
-    "description": "API PHP Library for elvanto church management software.",
-    "keywords": ["elvanto", "api"],
+    "description": "API PHP Library for Elvanto church management software.",
+    "keywords": ["Elvanto", "api"],
     "homepage": "https://github.com/elvanto/api-php/",
     "license": "MIT",
     "authors": [
         {
             "name": "Ben Sinclair",
-            "homepage": "http://elvanto.com",
+            "homepage": "https://www.elvanto.com",
             "role": "Developer"
         }
     ],
