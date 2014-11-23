@@ -1,17 +1,17 @@
 <?php
 /**
-* Super-simple elvanto API v1 wrapper
+* Super-simple Elvanto API v1 wrapper
 *
 * Requires curl
 *
 * @version 1.0.0
 */
 
-class elvanto_API {
+class Elvanto_API {
 
-	const API_ENDPOINT = 'http://api.elvanto.com/v1';
-	const OAUTH_URL = 'http://api.elvanto.com/oauth';
-	const OAUTH_TOKEN_URL = 'http://api.elvanto.com/oauth/token';
+	const API_ENDPOINT = 'https://api.elvanto.com/v1';
+	const OAUTH_URL = 'https://api.elvanto.com/oauth';
+	const OAUTH_TOKEN_URL = 'https://api.elvanto.com/oauth/token';
 
 	private $auth_details;
 
@@ -122,7 +122,7 @@ class elvanto_API {
 	*/
 	private function _request($method, $params = array(), $url = self::API_ENDPOINT) {
 		$ch = curl_init();
-		curl_setopt($ch, CURLOPT_USERAGENT, 'elvanto_API-PHP/1.0.0');
+		curl_setopt($ch, CURLOPT_USERAGENT, 'Elvanto_API-PHP/1.0.0');
 		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
 		curl_setopt($ch, CURLOPT_POST, true);
 		curl_setopt($ch, CURLOPT_HEADER, false);
