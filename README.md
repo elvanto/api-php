@@ -104,6 +104,13 @@ $results = $elvanto->call('people/getAll');
 var_dump($results);
 ```
 
+To send parameters in your call add an array with your parameters after the endpoint. 
+
+For example, to edit an existing members email address:
+```php
+$results = $elvanto->('people/edit', array('id'=>'XXXXXXX', 'fields'=>array('email'=>'new_email@address.com')));
+```
+
 ## Documentation
 
 Documentation can be found on the <a href="https://www.elvanto.com/api/" target="_blank">Elvanto API website</a>.
