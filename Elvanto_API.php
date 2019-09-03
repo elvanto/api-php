@@ -36,14 +36,14 @@ class Elvanto_API {
 		$this->auth_details = $auth_details;
 	}
 
-	/**
-	* Call a method.
-	*
-	* @param string $method The name of the method to call.
-	* @param array $params The parameters to pass to the method.
-	* @return array The response from the API method.
-	* @access public
-	*/
+    /**
+     * Call a method.
+     *
+     * @param string $method The name of the method to call.
+     * @param array $params The parameters to pass to the method.
+     * @return false|stdClass The response from the API method.
+     * @access public
+     */
 	public function call($method, $params = array()) {
 		return $this->_request($method, $params);
 	}
@@ -116,7 +116,7 @@ class Elvanto_API {
 	* @param string $method The name of the method to call.
 	* @param array $params The parameters to pass to the method.
 	* @param string $url The URL to post to.
-	* @return array The response from the API method.
+	* @return stdClass|false The response from the API method.
 	*
 	* @access private
 	*/
